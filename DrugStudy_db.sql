@@ -1,5 +1,6 @@
+drop table drug_data
+
 CREATE TABLE drug_data(
-	id SERIAL PRIMARY KEY,
 	State VARCHAR,
 	Year INT,
 	Month VARCHAR,
@@ -8,3 +9,4 @@ CREATE TABLE drug_data(
 );
 
 SELECT * FROM drug_data;
+
