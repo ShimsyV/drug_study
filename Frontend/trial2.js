@@ -1,4 +1,7 @@
+var stateselect1 = "US"
+
 // Main Plot in aggregate: setting state = US is a catchall from the original dataset
+
 Plotly.d3.csv("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/Output/drug_final3.csv", function(err, rows){
 
   function unpack(rows, key) {
@@ -11,19 +14,13 @@ Plotly.d3.csv("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/mai
       x: unpack(rows, 'Year'),
       y: unpack(rows, 'Death Count'),
       transforms: [
-        // {
-        // type: 'filter',
-        // target: unpack(rows, 'Month'),
-        // operation: '=',
-        // // want to change the value below to something defined by a dropdown
-        // value: 'July'
-        // }, 
         {
         type: 'filter',
         target: unpack(rows, 'State'),
         // want to change the value below to something defined by a dropdown
         operation: '=',
-        value: 'US'
+        // value: "US"
+        value: stateselect1
         },
         {
         type: 'groupby',
@@ -46,6 +43,7 @@ Plotly.d3.csv("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/mai
         }]
     }]
 
+    // Barchart plot 1
     var data2 = [{
         type: 'bar',
         x: unpack(rows, 'Drug Name'),
@@ -81,6 +79,8 @@ Plotly.d3.csv("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/mai
          }
           ]
         }]
+
+    // Barchart Plot 2
     var data3 = [{
         type: 'bar',
         x: unpack(rows, 'Drug Name'),
@@ -147,3 +147,12 @@ Plotly.newPlot('plot2', data2, layout2)
 
 Plotly.newPlot('plot3', data3, layout3)
 });
+
+
+function getState()
+{
+    var stateselect1 = document.getElementById("list").value;
+    console.log(stateselect1);
+    Plotly.react('plot1', data1, layout1);
+}
+getState();
