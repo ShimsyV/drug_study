@@ -3,13 +3,13 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Landing Page</title>
-
+  <title>Drug Overdose Study</title>
   <!-- Bring in our bootstrap stylesheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -23,24 +23,27 @@
 
 
 <div class="row">
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
-    </div>
+      </div>
 </div>
 
 <!-- <div class="row"> -->
 <div class="row d-flex justify-content-center">
-    <div class="col-md-10">
-        <div class="container-fluid">
+    <div class="col-md-12">
+        <!-- <div class="container-fluid">
             <p>Placeholder for Line Graph 1</p>
-        </div>
+        </div> -->
+        <div id="plot1"></div>
+        <script src="trial2.js"></script>
     </div>
 </div>
 
@@ -71,15 +74,19 @@
 
 <div class="row d-flex justify-content-center">
     <div class="col-md-5">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <p>Placeholder for bar Graph 1</p>
-        </div>
+        </div> -->
+        <div id="plot2"></div>
+        <script src="trial2.js"></script>
     </div>
 
     <div class="col-md-5">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <p>Placeholder for bar Graph 2</p>
-        </div>
+        </div> -->
+        <div id="plot3"></div>
+        <script src="trial2.js"></script>
     </div>
     
 </div>
