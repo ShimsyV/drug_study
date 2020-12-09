@@ -145,7 +145,7 @@ def drugall():
     for data in results:
         drugDict={
             "state": data.state,
-            "year": data.year,
+            "year": str(data.year),
             "month": data.month,
             "drug_name": data.drug_name,
             "death_count": data.death_count
