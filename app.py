@@ -24,7 +24,7 @@ app = Flask(__name__)
 try:
     db_uri = os.environ['DATABASE_URL']
 except KeyError:
-    db_uri = "postgres://postgres:PASSWORD@localhost:5432/DrugStudy_db"
+    db_uri = "postgres://postgres:1043@localhost:5432/DrugStudy_db"
 
 print(db_uri)
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
@@ -130,23 +130,37 @@ def deathcount():
 
 def drugall():
 
-    results = db.session.query(Drug.state, Drug.year, Drug.month, Drug.drug_name, Drug.death_count).all()
+    #results = db.session.query(Drug.state, Drug.year, Drug.month, Drug.drug_name, Drug.death_count).all()
     # results=list(np.ravel(results))
+    results = db.session.query(Drug).all()
+    
 
-    state = [result[0] for result in results]
-    year = [result[1] for result in results]
-    month = [result[2] for result in results]
-    drug_name = [result[3] for result in results]
-    death_count = [result[4] for result in results]
+    # state = [result[0] for result in results]
+    # year = [result[1] for result in results]
+    # month = [result[2] for result in results]
+    # drug_name = [result[3] for result in results]
+    # death_count = [result[4] for result in results]
 
-    drug_data = [{
-        "state": state,
-        "year": year,
-        "month": month,
-        "drug_name": drug_name,
-        "death_count": death_count               
-    }]
-    return jsonify(drug_data)
+    dataReturn=[]
+    for data in results:
+        drugDict={
+            "state": data.state,
+            "year": data.year,
+            "month": data.month,
+            "drug_name": data.drug_name,
+            "death_count": data.death_count
+            
+        }
+
+    # drug_data = [{
+    #     "state": state,
+    #     "year": year,
+    #     "month": month,
+    #     "drug_name": drug_name,
+    #     "death_count": death_count               
+    # }]
+        dataReturn.append(drugDict)
+    return jsonify(dataReturn)
 
 
 if __name__ == "__main__":

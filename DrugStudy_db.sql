@@ -1,12 +1,3 @@
-drop table drug_data
+ALTER TABLE drug_data ADD COLUMN id SERIAL PRIMARY KEY;
 
-CREATE TABLE drug_data(
-	State VARCHAR,
-	Year INT,
-	Month VARCHAR,
-	Drug_Name VARCHAR,
-	Death_Count DEC
-);
-
-SELECT * FROM drug_data;
-
+SELECT * FROM drug_data
