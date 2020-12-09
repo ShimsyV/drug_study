@@ -1,74 +1,158 @@
-Plotly.d3.csv("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/Output/drug_final3.csv", function(err, rows){
+var stateselect1 = "US"
 
-    function unpack(rows, key) {
-        return rows.map(function(row) { return row[key]; });
-    }
+// Main Plot in aggregate: setting state = US is a catchall from the original dataset
 
-    var allState = unpack(rows, 'State'),
-        allYear = unpack(rows, 'Year'),
-        allDeathCount = unpack(rows, 'Death Count'),
-        listofStates = [],
-        currentstate,
-        currentyear = [],
-        currentDeathCount = [];
+Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
 
-    for (var i = 0; i < allState.length; i++ ){
-        if (listofStates.indexOf(allState[i]) === -1 ){
-            listofStates.push(allState[i]);
-        }
-    }
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
 
-    function getStateData(chosenState) {
-        currentyear = [];
-        currentDeathCount = [];
-        for (var i = 0 ; i < allState.length ; i++){
-            if ( allState[i] === chosenState ) {
-                currentyear.push(allYear[i]);
-                currentDeathCount.push(allDeathCount[i]);
-            }
-        }
-    };
+  var data1 = [{
+      type: 'scatter',
+      mode: 'lines+markers',
+      x: unpack(rows, 'Year'),
+      y: unpack(rows, 'Death Count'),
+      transforms: [
+        {
+        type: 'filter',
+        target: unpack(rows, 'State'),
+        // want to change the value below to something defined by a dropdown
+        operation: '=',
+        // value: "US"
+        value: stateselect1
+        },
+        {
+        type: 'groupby',
+        groups: unpack(rows, 'Drug Name'),
+        styles: [
+          {target: 'Cocaine ', value: {marker: {color: 'red'}}},
+          {target: 'Heroin ', value: {marker: {color: 'blue'}}},
+          {target: 'Methadone', value: {marker: {color: 'orange'}}},
+          {target: 'Opioids ', value: {marker: {color: 'green'}}},
+          {target: 'Prescription Opioids', value: {marker: {color: 'brown'}}},
+          {target: 'Psychostimulants ', value: {marker: {color: 'purple'}}}
+        ]
+        },
+        {
+            type: 'aggregate',
+            groups: unpack(rows, 'Year'),
+            aggregations: [
+            {target: 'y', func: 'avg'},
+            ]
+        }]
+    }]
 
-    // Default State
-    setBubblePlot('US');
+    // Barchart plot 1
+    var data2 = [{
+        type: 'bar',
+        x: unpack(rows, 'Drug Name'),
+        y: unpack(rows, 'Death Count'),
+        transforms: [
+          {
+          type: 'filter',
+          target: unpack(rows, 'Year'),
+          operation: '=',
+          // want to change the value below to something defined by a dropdown
+          value: '2019'
+          }, 
+          {
+          type: 'filter',
+          target: unpack(rows, 'State'),
+          // want to change the value below to something defined by a dropdown
+          operation: '=',
+          value: 'AK'
+          },
+          {
+        //   type: 'filter',
+        //   target: unpack(rows, 'Month'),
+        //   // want to change the value below to something defined by a dropdown
+        //   operation: '=',
+        //   value: 'July'
+          },
+          {
+            type: 'aggregate',
+            groups: unpack(rows, 'Month'),
+            aggregations: [
+              {target: 'y', func: 'avg'},
+            ]
+         }
+          ]
+        }]
 
-    function setBubblePlot(chosenState) {
-        getStateData(chosenState);
+    // Barchart Plot 2
+    var data3 = [{
+        type: 'bar',
+        x: unpack(rows, 'Drug Name'),
+        y: unpack(rows, 'Death Count'),
+        transforms: [
+            {
+            type: 'filter',
+            target: unpack(rows, 'Year'),
+            operation: '=',
+            // want to change the value below to something defined by a dropdown
+            value: '2016'
+            }, 
+              {
+              type: 'filter',
+              target: unpack(rows, 'State'),
+              // want to change the value below to something defined by a dropdown
+              operation: '=',
+              value: 'AK'
+              },
+            //   {
+            //   type: 'filter',
+            //   target: unpack(rows, 'Month'),
+            //   // want to change the value below to something defined by a dropdown
+            //   operation: '=',
+            //   value: 'July'
+            //   },
+              {
+                type: 'aggregate',
+                groups: unpack(rows, 'Month'),
+                aggregations: [
+                  {target: 'y', func: 'avg'},
+                ]
+             },
+              ]
+    
+    
+              
+          }]
 
-        var trace1 = {
-            y: currentDeathCount,
-            x: currentyear,
-            mode: 'lines+markers',
-        };
+          
+      
 
-        var data = [trace1];
+var layout1 = {
+  title: "Accumulated Drug Deaths in the United States, 2016 - 2019",
+  xaxis: { title: "Year"},
+  yaxis: { title: "Total Deaths"}
+}
 
-        var layout = {
-            title:'Line and Scatter Plot',
-            height: 400,
-            width: 480
-        };
+var layout2 = {
+    // title: "Comparison 1",
+    xaxis: { title: "Drug Type"},
+    yaxis: { title: "Total Deaths"}
+  }
 
-        Plotly.newPlot('plot1', data, layout);
-    };
+var layout3 = {
+    // title: "Comparison 1",
+    xaxis: { title: "Drug Type"},
+    yaxis: { title: "Total Deaths"}
+  }
 
-    var innerContainer = document.querySelector('[data-num="0"'),
-        plotEl = innerContainer.querySelector('.plot'),
-        StateSelector = innerContainer.querySelector('.Statedata');
+Plotly.newPlot('plot1', data1, layout1)
 
-    function assignOptions(textArray, selector) {
-        for (var i = 0; i < textArray.length;  i++) {
-            var currentOption = document.createElement('option');
-            currentOption.text = textArray[i];
-            selector.appendChild(currentOption);
-        }
-    }
+Plotly.newPlot('plot2', data2, layout2)
 
-    assignOptions(listofStates, StateSelector);
-
-    function updateState(){
-        setBubblePlot(StateSelector.value);
-    }
-
-    StateSelector.addEventListener('change', updateState, false);
+Plotly.newPlot('plot3', data3, layout3)
 });
+
+
+function getState()
+{
+    var stateselect1 = document.getElementById("list").value;
+    console.log(stateselect1);
+    Plotly.react('plot1', data1, layout1);
+}
+getState();
