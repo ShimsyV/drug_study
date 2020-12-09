@@ -24,11 +24,7 @@ app = Flask(__name__)
 try:
     db_uri = os.environ['DATABASE_URL']
 except KeyError:
-<<<<<<< HEAD
-    db_uri = "postgres://postgres:1043@localhost:5432/DrugStudy_db"
-=======
-    db_uri = "postgres://postgres:Foodsam655@@localhost:5432/DrugStudy_db"
->>>>>>> 967706e9fdba69501c7aeb9efd921dd9c8a8e7bc
+    db_uri = "postgres://postgres:PASSWORD@localhost:5432/DrugStudy_db"
 
 print(db_uri)
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
@@ -62,7 +58,8 @@ def welcome():
         f"/api/v1.0/year<br/>"
         f"/api/v1.0/month<br/>"
         f"/api/v1.0/drug_name<br/>"
-        f"/api/v1.0/death_count<br/>")
+        f"/api/v1.0/death_count<br/>"
+        f"/api/v1.0/alldrugs<br/>")
 #################################################
 # Rendering the Template
 #################################################
@@ -112,13 +109,8 @@ def drugname():
 
     drugname_query= db.session.query(Drug.drug_name).all()
     
-<<<<<<< HEAD
-    all_drugs=list(np.ravel(drugname_query))
-    return jsonify(all_drugs)
-=======
-    drugname=list(np.ravel(drugname_query))
-    return jsonify(drugname)
->>>>>>> 967706e9fdba69501c7aeb9efd921dd9c8a8e7bc
+    all_names=list(np.ravel(drugname_query))
+    return jsonify(all_names)
     
 #################################################
 # death_count Route
