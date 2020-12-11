@@ -10,10 +10,10 @@ function getState()
     var stateselect1 = document.getElementById("list").value;
     console.log(stateselect1);
 
-Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
+Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
 // Plotly.d3.json("localhost:5000/api/v1.0/alldrugs", function(err, rows){
   function unpack(rows, key) {
-  return rows.map(function(row) { return row[key]; });
+  return rows.map(function(row) { return +row[key]; });
 }
 
   var data1 = [{

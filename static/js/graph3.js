@@ -7,7 +7,7 @@ function getState3()
     var stateselect3 = document.getElementById("list4").value;
     console.log(stateselect3);
 
-    Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
+    Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
         function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
       }
@@ -67,7 +67,7 @@ function getYear3()
     var Yearselect3 = document.getElementById("list5").value;
     console.log(Yearselect3);
 
-    Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
+    Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
         function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
       }
