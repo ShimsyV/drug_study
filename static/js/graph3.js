@@ -14,33 +14,33 @@ function getState3()
 
     var data3 = [{
         type: 'bar',
-        x: unpack(rows, 'Drug Name'),
-        y: unpack(rows, 'Death Count'),
+        x: unpack(rows, 'drug_name'),
+        y: unpack(rows, 'death_count'),
         transforms: [
         {
         type: 'filter',
-        target: unpack(rows, 'Year'),
+        target: unpack(rows, 'year'),
         operation: '=',
         // want to change the value below to something defined by a dropdown
         value: Yearselect3
         }, 
         {
         type: 'filter',
-        target: unpack(rows, 'State'),
+        target: unpack(rows, 'state'),
         // want to change the value below to something defined by a dropdown
         operation: '=',
         value: stateselect3
         },
         {
         //   type: 'filter',
-        //   target: unpack(rows, 'Month'),
+        //   target: unpack(rows, 'month'),
         //   // want to change the value below to something defined by a dropdown
         //   operation: '=',
         //   value: 'July'
         },
         {
             type: 'aggregate',
-            groups: unpack(rows, 'Month'),
+            groups: unpack(rows, 'month'),
             aggregations: [
             {target: 'y', func: 'avg'},
             ]
@@ -74,33 +74,33 @@ function getYear3()
 
     var data3 = [{
         type: 'bar',
-        x: unpack(rows, 'Drug Name'),
-        y: unpack(rows, 'Death Count'),
+        x: unpack(rows, 'drug_name'),
+        y: unpack(rows, 'death_count'),
         transforms: [
         {
         type: 'filter',
-        target: unpack(rows, 'Year'),
+        target: unpack(rows, 'year'),
         operation: '=',
         // want to change the value below to something defined by a dropdown
         value: Yearselect3
         }, 
         {
         type: 'filter',
-        target: unpack(rows, 'State'),
+        target: unpack(rows, 'state'),
         // want to change the value below to something defined by a dropdown
         operation: '=',
         value: stateselect3
         },
         {
         //   type: 'filter',
-        //   target: unpack(rows, 'Month'),
+        //   target: unpack(rows, 'month'),
         //   // want to change the value below to something defined by a dropdown
         //   operation: '=',
         //   value: 'July'
         },
         {
             type: 'aggregate',
-            groups: unpack(rows, 'Month'),
+            groups: unpack(rows, 'month'),
             aggregations: [
             {target: 'y', func: 'avg'},
             ]

@@ -19,12 +19,12 @@ Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
   var data1 = [{
       type: 'scatter',
       mode: 'lines+markers',
-      x: unpack(rows, 'Year'),
-      y: unpack(rows, 'Death Count'),
+      x: unpack(rows, 'year'),
+      y: unpack(rows, 'death_count'),
       transforms: [
         {
         type: 'filter',
-        target: unpack(rows, 'State'),
+        target: unpack(rows, 'state'),
         // want to change the value below to something defined by a dropdown
         operation: '=',
         // value: "US"
@@ -32,7 +32,7 @@ Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
         },
         {
         type: 'groupby',
-        groups: unpack(rows, 'Drug Name'),
+        groups: unpack(rows, 'drug_name'),
         styles: [
           {target: 'Cocaine ', value: {marker: {color: 'red'}}},
           {target: 'Heroin ', value: {marker: {color: 'blue'}}},
@@ -44,7 +44,7 @@ Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
         },
         {
             type: 'aggregate',
-            groups: unpack(rows, 'Year'),
+            groups: unpack(rows, 'year'),
             aggregations: [
             {target: 'y', func: 'avg'},
             ]
