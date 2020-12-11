@@ -1,7 +1,7 @@
 # import necessary libraries
 import os
 import numpy as np
-
+import psycopg2
 
 from flask import (
     Flask,
