@@ -25,7 +25,7 @@ app = Flask(__name__)
 try:
     db_uri = os.environ['DATABASE_URL']
 except KeyError:
-    db_uri = "postgres://postgres:Foodsam655@@localhost:5432/DrugStudy_db"
+    db_uri = "postgres://avsrkdqtegxzjr:83afd61ef5b5b621120d83a053790a28f83ee6d60be17f55c4b19410737f0771@ec2-52-22-238-188.compute-1.amazonaws.com:5432/dcve1h312v0e62"
 
 print(db_uri)
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
