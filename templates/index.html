@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <!-- <link rel="stylesheet" href="static/css/style.css"> -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
@@ -18,13 +19,17 @@
     <div class="container">
         <h1 class="display-4">Comparison of Drug Overdose Deaths</h1>
         <p class="sub-title">subtitle thing</p>
+        <button onclick="APILink()">See API for this data</button>
+        <script>
+            function APILink(){window.location='http://drug-study.herokuapp.com/api/v1.0/alldrugs';}
+        </script>
     </div>
 </div>  
 
 
 <div class="row">
     <div class="container">
-    <select id="list" onchange="getState();">
+    <select id="list">
         <option value="US">US - ALL</option>
         <option value="AK">AK - Alaska</option>
         <option value="AZ">AZ - Arizona</option>
@@ -67,37 +72,30 @@
         <option value="WI">WI - Wisconsin</option>
         <option value="WV">WV - West Virginia</option>
         <option value="WY">WY - Wyoming</option>        
-        
     </select>
+    <button onclick="changegraph1()">Update Graph</button>
     </div>
-<!-- <script>
-    
-    function getSelectValue()
-    {
-        var stateselect1 = document.getElementById("list").value;
-        console.log(stateselect1);
-        Plotly.newPlot('plot1', data1, layout1);
-    }
-    getSelectValue();
-
-</script> -->
 </div>
 
-<!-- <div class="row"> -->
 <div class="row d-flex justify-content-center">
     <div class="col-md-12">
         <!-- <div class="container-fluid">
             <p>Placeholder for Line Graph 1</p>
         </div> -->
         <div id="plot1"></div>
-        <script src="trial3.js"></script>
+        <script src="{{url_for('static', filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
     </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <p class="sub-title">---------------------spacer or title row---------------------</p>
 </div>
 
 <div class="row d-flex justify-content-center">
     <div class="col-md-5">
     <div class="container">
-        <select id="list2" onchange="getState2();">
+        <select id="list2">
             <option value="US">US - ALL</option>
             <option value="AK">AK - Alaska</option>
             <option value="AZ">AZ - Arizona</option>
@@ -145,8 +143,8 @@
         </div>
 
         <div class="container">
-            <select id="list3" onchange="getYear2();">
-                <option value="2015">2015</option>
+            <select id="list3">
+                <!-- <option value="2015">2015</option> -->
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
@@ -154,12 +152,13 @@
                 <option value="2020">2020</option>
 
             </select>
+            <button onclick="changegraph2()">Update Graph</button>
             </div>
         </div>
 
         <div class="col-md-5">
             <div class="container">
-                <select id="list" onchange="getState3();">
+                <select id="list4">
                     <option value="US">US - ALL</option>
                     <option value="AK">AK - Alaska</option>
                     <option value="AZ">AZ - Arizona</option>
@@ -207,15 +206,15 @@
             </div>
         
                 <div class="container">
-                    <select id="list" onchange="getYear3();">
-                        <option value="2015">2015</option>
+                    <select id="list5">
+                        <!-- <option value="2015">2015</option> -->
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
                         <option value="2018">2018</option>
                         <option value="2019">2019</option>
                         <option value="2020">2020</option>
-        
                     </select>
+                    <button onclick="changegraph3()">Update Graph</button>
                 </div>
         </div>
 </div>
@@ -227,7 +226,8 @@
             <p>Placeholder for bar Graph 1</p>
         </div> -->
         <div id="plot2"></div>
-        <script src="trial4.js"></script>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
     </div>
 
     <div class="col-md-5">
@@ -235,7 +235,84 @@
             <p>Placeholder for bar Graph 2</p>
         </div> -->
         <div id="plot3"></div>
-        <script src="trial5.js"></script>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>
+    
+</div>
+
+<div class="row d-flex justify-content-center">
+    <p class="sub-title">---------------------spacer or title row---------------------</p>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+    <div class="container">
+        <select id="graph4list1">
+            <option value="Cocaine ">Cocaine </option>
+            <option value="Heroin ">Heroin </option>
+            <option value="Methadone">Methadone</option>
+            <option value="Opioids ">Opioids </option>
+            <option value="Prescription Opioids">Prescription Opioids</option>     
+        </select>
+        </div>
+
+        <div class="container">
+            <select id="graph4list2">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+            <button onclick="changegraph4()">Update Graph</button>
+            </div>
+        </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-10">
+        <div id="plot4"></div>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>
+    
+</div>
+
+<div class="row d-flex justify-content-center">
+    <p class="sub-title">---------------------spacer or title row---------------------</p>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+    <div class="container">
+        <select id="graph5list1">
+            <option value="Cocaine ">Cocaine </option>
+            <option value="Heroin ">Heroin </option>
+            <option value="Methadone">Methadone</option>
+            <option value="Opioids ">Opioids </option>
+            <option value="Prescription Opioids">Prescription Opioids</option>     
+        </select>
+        </div>
+
+        <div class="container">
+            <select id="graph5list2">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+            <button onclick="changegraph5()">Update Map</button>
+            </div>
+        </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+        <div id="plot5"></div>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
     </div>
     
 </div>
