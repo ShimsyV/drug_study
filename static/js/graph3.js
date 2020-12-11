@@ -40,7 +40,7 @@ function getState3()
         },
         {
             type: 'aggregate',
-            groups: unpack(rows, 'month'),
+            groups: unpack(rows, 'drug_name'),
             aggregations: [
             {target: 'y', func: 'avg'},
             ]
@@ -100,7 +100,7 @@ function getYear3()
         },
         {
             type: 'aggregate',
-            groups: unpack(rows, 'month'),
+            groups: unpack(rows, 'drug_name'),
             aggregations: [
             {target: 'y', func: 'avg'},
             ]
