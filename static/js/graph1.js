@@ -13,7 +13,7 @@ function getState()
 Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
 // Plotly.d3.json("localhost:5000/api/v1.0/alldrugs", function(err, rows){
   function unpack(rows, key) {
-  return rows.map(function(row) { return +row[key]; });
+  return rows.map(function(row) { return row[key]; });
 }
 
   var data1 = [{
