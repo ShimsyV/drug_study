@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
@@ -90,7 +90,7 @@
             <p>Placeholder for Line Graph 1</p>
         </div> -->
         <div id="plot1"></div>
-        <script src="{{url_for('static', filename='js/graph1.js')}}"></script>
+        <script src="trial3.js"></script>
     </div>
 </div>
 
@@ -159,7 +159,7 @@
 
         <div class="col-md-5">
             <div class="container">
-                <select id="list4" onchange="getState3();">
+                <select id="list" onchange="getState3();">
                     <option value="US">US - ALL</option>
                     <option value="AK">AK - Alaska</option>
                     <option value="AZ">AZ - Arizona</option>
@@ -207,7 +207,7 @@
             </div>
         
                 <div class="container">
-                    <select id="list5" onchange="getYear3();">
+                    <select id="list" onchange="getYear3();">
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
@@ -227,7 +227,7 @@
             <p>Placeholder for bar Graph 1</p>
         </div> -->
         <div id="plot2"></div>
-        <script src="{{url_for('static',filename='js/graph2.js')}}"></script>
+        <script src="trial4.js"></script>
     </div>
 
     <div class="col-md-5">
@@ -235,7 +235,7 @@
             <p>Placeholder for bar Graph 2</p>
         </div> -->
         <div id="plot3"></div>
-        <script src="{{url_for('static',filename='js/graph3.js')}}"></script>
+        <script src="trial5.js"></script>
     </div>
     
 </div>
