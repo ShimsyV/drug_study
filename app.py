@@ -43,8 +43,8 @@ class Drug(db.Model):
     death_count = db.Column(db.Float)
     id = db.Column(db.Integer, primary_key=True)
 
-    def  __repr__(self):
-        return '<Drugs %r>' % (self.state)
+    # def  __repr__(self):
+    #     return '<Drugs %r>' % (self.state)
 
 #################################################
 # Flask Routes
