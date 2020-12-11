@@ -10,7 +10,7 @@ function getState()
     var stateselect1 = document.getElementById("list").value;
     console.log(stateselect1);
 
-Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
+Plotly.d3.json("http://drug-study.herokuapp.com/api/v1.0/alldrugs", function(err, rows){
 // Plotly.d3.json("localhost:5000/api/v1.0/alldrugs", function(err, rows){
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -19,12 +19,12 @@ Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/ma
   var data1 = [{
       type: 'scatter',
       mode: 'lines+markers',
-      x: unpack(rows, 'Year'),
-      y: unpack(rows, 'Death Count'),
+      x: unpack(rows, 'year'),
+      y: unpack(rows, 'death_count'),
       transforms: [
         {
         type: 'filter',
-        target: unpack(rows, 'State'),
+        target: unpack(rows, 'state'),
         // want to change the value below to something defined by a dropdown
         operation: '=',
         // value: "US"
@@ -32,7 +32,7 @@ Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/ma
         },
         {
         type: 'groupby',
-        groups: unpack(rows, 'Drug Name'),
+        groups: unpack(rows, 'drug_name'),
         styles: [
           {target: 'Cocaine ', value: {marker: {color: 'red'}}},
           {target: 'Heroin ', value: {marker: {color: 'blue'}}},
@@ -44,7 +44,7 @@ Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/ma
         },
         {
             type: 'aggregate',
-            groups: unpack(rows, 'Year'),
+            groups: unpack(rows, 'year'),
             aggregations: [
             {target: 'y', func: 'avg'},
             ]
