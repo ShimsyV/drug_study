@@ -43,7 +43,7 @@ function getState2()
             type: 'aggregate',
             groups: unpack(rows2, 'drug_name'),
             aggregations: [
-            {target: 'y', func: 'sum'}
+            {target: 'y', func: 'avg'}
             ]
         }
         ]
@@ -103,7 +103,7 @@ function getYear2()
             type: 'aggregate',
             groups: unpack(rows, 'drug_name'),
             aggregations: [
-            {target: 'y', func: 'sum'},
+            {target: 'y', func: 'avg'},
             ]
         }
         ]
