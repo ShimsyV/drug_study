@@ -2,8 +2,8 @@ var stateselect1 = "US"
 
 // Main Plot in aggregate: setting state = US is a catchall from the original dataset
 
-Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
-
+// Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
+Plotly.d3.json("localhost:5000/api/v1.0/alldrugs", function(err, rows){
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
 }
