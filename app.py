@@ -49,7 +49,7 @@ class Drug(db.Model):
 #################################################
 # Flask Routes
 #################################################
-@app.route("/")
+@app.route("/routes")
 def welcome():
     """List all available api routes."""
     return (
@@ -63,9 +63,9 @@ def welcome():
 #################################################
 # Rendering the Template
 #################################################
-# @app.route("/")     
-# def enter_data(): 
-#     return render_template("dataentry.html")
+@app.route("/")     
+def enter_data(): 
+    return render_template("index2.html")
 
 #################################################
 # State Route
