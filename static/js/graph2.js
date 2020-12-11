@@ -39,13 +39,13 @@ function getState2()
         //   operation: '=',
         //   value: 'July'
         },
-        // {
-        //     type: 'aggregate',
-        //     groups: unpack(rows2, 'month'),
-        //     aggregations: [
-        //     {target: 'y', func: 'avg'}
-        //     ]
-        // }
+        {
+            type: 'aggregate',
+            groups: unpack(rows2, 'drug_name'),
+            aggregations: [
+            {target: 'y', func: 'sum'}
+            ]
+        }
         ]
         }]
       
@@ -99,13 +99,13 @@ function getYear2()
         //   operation: '=',
         //   value: 'July'
         },
-        // {
-        //     type: 'aggregate',
-        //     groups: unpack(rows, 'month'),
-        //     aggregations: [
-        //     {target: 'y', func: 'avg'},
-        //     ]
-        // }
+        {
+            type: 'aggregate',
+            groups: unpack(rows, 'drug_name'),
+            aggregations: [
+            {target: 'y', func: 'sum'},
+            ]
+        }
         ]
         }]
       
