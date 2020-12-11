@@ -7,10 +7,10 @@ function getState2()
     var stateselect2 = document.getElementById("list2").value;
     console.log(stateselect2);
 
-    Plotly.d3.json("localhost:5000/api/v1.0/alldrugs", function(err, rows2){
+    Plotly.d3.json("http://localhost:5000/api/v1.0/alldrugs", function(err, rows2){
         function unpack(rows, key) {
           // console.log('unpack: ', key,rows);
-        return rows.map(function(row) { return row[key]; });
+        return rows.map(function(row) { return +row[key]; });
       }
       // console.log('rows2: ', rows2);
     var data2 = [{

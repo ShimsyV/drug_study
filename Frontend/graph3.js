@@ -9,7 +9,7 @@ function getState3()
 
     Plotly.d3.json("https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/static/js/data.json", function(err, rows){
         function unpack(rows, key) {
-        return rows.map(function(row) { return row[key]; });
+        return rows.map(function(row) { return +row[key]; });
       }
 
     var data3 = [{
