@@ -2,30 +2,41 @@
 
     text-align: center;
     font-weight: normal;
+    color: #ffffff
 }
 
 .sub-title{
     text-align: center;
     font-style: italic;
+    color: #ffffff
+}
+
+.graphtitle{
+  text-align: center;
+  font-weight: Bold;
+  color: #ffffff
+
+}
+
+.container-fluid{
+  background-color: #350d36;
+  border-radius: 0.3rem;
+  padding: 1rem 1rem;
+  color: #FFFFFF;
+
 }
 
 .jumbotron {
     padding-left: 50px;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background-color: #e9ecef;
+    background-color: #350d36;
     border-radius: 0.3rem; }
     @media (min-width: 576px) {
       .jumbotron {
         padding: 4rem 2rem; } 
     }
 
-.container-fluid {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #495057;
-    border-radius: 0.3rem;
-}
 
 .list {
     padding-left: 50px;
@@ -57,18 +68,19 @@
   
   /* Style the top navigation bar */
   .topnav {
-    background-color: #94d1cc;
+    background-color: #350d36;
     overflow: hidden;
-    position: -webkit-sticky;
-    position: sticky;
+    /* position: -webkit-sticky; */
+    /* position: sticky; */
     top: 0;
+    border-radius: 0.3rem;
   }
   
   /* Style the topnav links */
   .topnav a {
-    float: left;
+    float: right;
     display: block;
-    color: #FFDEAD;
+    color: #FFFFFF;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -82,7 +94,7 @@
   /* Change color on hover */
   .topnav a:hover {
     background-color: #ddd;
-    color: black;
+    color: #350d36;
   }
   
   /* Create two unequal columns that floats next to each other */
@@ -101,9 +113,9 @@
   }
   
   /* Add a card effect for articles */
-  .card {
-    background-color: white;
-    padding: 20px 100px 20px 100px;
+  .card-fluid {
+    background-color: #f1f1f1;
+    padding: 20px 20px 20px 20px;
     margin-top: 20px;
   }
   /* Clear floats after the columns */
@@ -116,25 +128,27 @@
   /* Footer */
   .footer {
     padding: 20px;
-    text-align: center;
-    background: #b0dbe9;
+    text-align: Left;
+    background: #350d36;
     margin-top: 20px;
-    color: #571B7E ;
+    color: #FFFFFF ;
   }
 
   .spacer {
     padding: 20px;
     text-align: center;
-    background: #e9ecef;
+    background: #f1f1f1;
     margin-top: 20px;
 
   }
 
 .btn-primary {
     text-align: center;
-    background:  #94d1cc;
-    color:#FFDEAD;
+    background:  #350d36;
+    color:#ffffff;
     font-weight: bold;
+    border: 1 px solid black;
+
 
   }
 

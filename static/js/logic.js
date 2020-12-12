@@ -68,7 +68,8 @@ Plotly.d3.json(jsontarget, function(err, rows){
         tick0: 2016,
         dtick: 1
       },
-      yaxis: { title: "<b>Total Deaths</b>"}
+      yaxis: { title: "<b>Total Deaths</b>"},
+      // paper_bgcolor:"#F1F1F1"
     }
 
     Plotly.newPlot('plot1', data1, layout1)
