@@ -56,7 +56,7 @@ Looking more specifically into the sample of states discussed. Prescription drug
 ![Images/drug-type.png](Images/drug-type.png)
 
 
-Project -2
-Group 12
-Prepared by Shimsy Varkey, Sam Jebreen, Justin Chow, Zhanna Kirbakayeva
-@2020
+#### Project -2
+#### Group 12
+#### Prepared by Shimsy Varkey, Sam Jebreen, Justin Chow, Zhanna Kirbakayeva
+### @2020
