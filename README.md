@@ -34,7 +34,15 @@ The analyses below incorporate this research to identify states that have higher
 
 ![Images/state-graph.png](Images/state-graph.png)
 
-### Detailing the process of the extraction, transformation, and loading steps 
+### Detailing the process 
+
+ØWe first cleaned the data in python. Removed unwanted columns and renamed the columns.
+ØWe created the database – drugstudy_db in postgresSQL
+ØWe opened the Heroku app and created a drug-study page for our project - http://drug-study.herokuapp.com/
+Ø Created the flask application to create the json api
+ØCreated a Heroku server in postgres and generated a database
+ØWrote the javascript code
+ØDeployed the code to heroku
 
 The drug data was downloaded from healthdata.gov website as a CSV file.  This was then opened in the Jupyter lab as a Pandas Dataframe. Next, we performed the data cleaning in Pandas by keeping only the columns needed for our project as shown in the Jupyter lab. We checked to see if there were null values in our drug data. There were 27,380 rows out of 34,945 rows with null data. Since we are interested in state overdose death count in relation to our data by state, we dropped all rows that contain null values in the state column. We now have 7,565 rows without null data in relation to the state column.  Since, null data was indicated in year 2015 column, we dropped 2015 column. 
 
