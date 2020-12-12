@@ -1,4 +1,4 @@
-# Trends in Drug Overdoses in the United States
+# Drug Overdose trends in the United States
 
 ![Images/drug-overdose-death.jpg](Images/drug-overdose-death.jpg)
 
