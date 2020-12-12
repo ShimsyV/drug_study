@@ -2,10 +2,10 @@
 
 ![Images/drug-overdose-death.jpg](Images/drug-overdose-death.jpg)
 
-Introduction
+### Introduction
 In the past 3 decades, drug overdoses have killed approximately 870,000 people. Since first wave of the opioid epidemic began in the 1990s, the epidemic has expanded to include other synthetic, illicit drugs, including heroin and fentanyl. As new CDC data and other studies offer updates on the epidemic. 
 
-Methodology
+### Methodology
 This repository contains analytic code, findings and charts. Specifically, this repository processes and analyzes the CDC's drug overdose death data by year, geography, and specific drug combinations.
 
 ![Images/map.png](Images/map.png)
