@@ -46,7 +46,7 @@ We used this application to compile modules and libraries which also help as con
 # Findings
 
 The primary trend for the observed period is in the period from 2016-2019, which outlines the death rate nationwide in that timeframe. 
-Accumulated Drug Deaths in the United States, 2016-2019 
+#### Comparison of Overdose Deaths by Year
 
 ![Images/drug-death.png](Images/drug-death.png)
 
