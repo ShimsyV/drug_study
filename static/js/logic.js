@@ -1,6 +1,6 @@
 //json lookup
-// var jsontarget = "https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/Output/DrugData_local.json"
-var jsontarget = "/api/v1.0/alldrugs"
+var jsontarget = "https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/Output/DrugData_local.json"
+// var jsontarget = "/api/v1.0/alldrugs"
 
 // default values. Need to populate otherwise everything breaks
 var stateselect1 = "US"
@@ -60,15 +60,15 @@ Plotly.d3.json(jsontarget, function(err, rows){
     }]
 
     var layout1 = {
-      title: "Accumulated Drug Deaths in the United States, 2016 - 2019",
+      // title: "Accumulated Drug Deaths in the United States, 2016 - 2019",
       // xaxis: { title: "Year"},
       xaxis: {
-        title: "Year",
+        title: "<b>Year</b>",
         tickmode: "linear",
         tick0: 2016,
         dtick: 1
       },
-      yaxis: { title: "Total Deaths"}
+      yaxis: { title: "<b>Total Deaths</b>"}
     }
 
     Plotly.newPlot('plot1', data1, layout1)
@@ -123,8 +123,8 @@ function changegraph2()
       
       var layout2 = {
           // title: "Comparison 1",
-          xaxis: { title: "Drug Type"},
-          yaxis: { title: "Total Deaths"}
+          xaxis: { title: "<b>Drug Type</b>"},
+          yaxis: { title: "<b>Total Deaths</b>"}
         }
       
       Plotly.newPlot('plot2', data2, layout2)
@@ -178,8 +178,8 @@ function changegraph3()
       
       var layout3 = {
           // title: "Comparison 1",
-          xaxis: { title: "Drug Type"},
-          yaxis: { title: "Total Deaths"}
+          xaxis: { title: "<b>Drug Type</b>"},
+          yaxis: { title: "<b>Total Deaths</b>"}
         }
       
       Plotly.newPlot('plot3', data3, layout3)
@@ -239,9 +239,9 @@ function changegraph4()
 
       
       var layout4 = {
-          // title: "Comparison 1",
-          xaxis: { title: "State"},
-          yaxis: { title: "Total Deaths"}
+          title: "<b>Deaths Per State</b>",
+          xaxis: { title: "<b>State</b>"},
+          yaxis: { title: "<b>Total Deaths</b>"}
         }
       
       Plotly.newPlot('plot4', data4, layout4)
@@ -299,8 +299,8 @@ function changegraph5()
         ]
         }]
 
-      var layout5 = {mapbox: {style: "dark", center: {lon: -98.583333, lat: 39.833333}, zoom: 2.5},
-      width: 800, height:600, margin: {t: 0, b: 0}};
+      var layout5 = {mapbox: {style: "dark", center: {lon: -98.53333, lat: 39.833333}, zoom: 3.25},
+      width: 1000, height:600, margin: {t: 0, b: 0}};
 
       var config = {mapboxAccessToken: "pk.eyJ1Ijoic25pY2tldHQiLCJhIjoiY2tocGo5ZmxqMXU3ZjJ6cGVjeHJ3OXZraCJ9.dg884ZBp_wLz4cKcCqPDaA"};
       
