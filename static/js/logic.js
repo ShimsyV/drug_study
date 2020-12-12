@@ -1,6 +1,6 @@
 //json lookup
-var jsontarget = "https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/Output/DrugData_local.json"
-// var jsontarget = "/api/v1.0/alldrugs"
+// var jsontarget = "https://raw.githubusercontent.com/jebreensa/Project-2_Group12/main/Output/DrugData_local.json"
+var jsontarget = "/api/v1.0/alldrugs"
 
 // default values. Need to populate otherwise everything breaks
 var stateselect1 = "US"
