@@ -6,25 +6,7 @@
 http://drug-study.herokuapp.com/
 
 ### Language
-Python
-HTML
-JavaScrip
-Jupyter NoteBook
-
-### Packages
-certifi==2020.11.8
-click==7.1.2
-Flask==1.1.2
-Flask-SQLAlchemy==2.4.4
-gunicorn==20.0.4
-itsdangerous==1.1.0
-Jinja2==2.11.2
-MarkupSafe==1.1.1
-SQLAlchemy==1.3.20
-Werkzeug==1.0.1
-wincertstore==0.2
-numpy==1.19
-psycopg2==2.8
+Python| HTML | JavaScrip | Jupyter NoteBook
 
 ### Introduction
 In the past 3 decades, drug overdoses have killed approximately 870,000 people. Since first wave of the opioid epidemic began in the 1990s, the epidemic has expanded to include other synthetic, illicit drugs, including heroin and fentanyl. As new CDC data and other studies offer updates on the epidemic. 
