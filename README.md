@@ -66,6 +66,8 @@ Heroku postgres database url was linked into the flask server in order to deploy
 
 Index page contained the home page to our application. The structure of the page was built and coded within the index page using HTML. Styling and formatting was done within CSS where the dimensions of each graph were designed. Interactive plots were built using javascript along with all the jsonified data being aggregated and represented on each graph. CSS & JS codes were linked within HTML where everything was networked together.
 
+## Summary
+
 #### Comparison of Overdose Deaths by Year
 
 ![Images/drug-death.png](Images/drug-death.png)
