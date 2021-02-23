@@ -18,7 +18,6 @@ function changegraph1()
     var stateselect1 = document.getElementById("list").value;
     console.log(stateselect1);
 
-// Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
 Plotly.d3.json(jsontarget, function(err, rows){
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
@@ -33,7 +32,7 @@ Plotly.d3.json(jsontarget, function(err, rows){
         {
         type: 'filter',
         target: unpack(rows, 'state'),
-        // want to change the value below to something defined by a dropdown
+        // defined by a dropdown
         operation: '=',
         // value: "US"
         value: stateselect1
@@ -61,7 +60,7 @@ Plotly.d3.json(jsontarget, function(err, rows){
 
     var layout1 = {
       // title: "Accumulated Drug Deaths in the United States, 2016 - 2019",
-      // xaxis: { title: "Year"},
+      // tick rate determines year
       xaxis: {
         title: "<b>Year</b>",
         tickmode: "linear",
@@ -73,7 +72,7 @@ Plotly.d3.json(jsontarget, function(err, rows){
     }
 
     Plotly.newPlot('plot1', data1, layout1)
-    // Plotly.react('plot1', data1, layout1)
+
 });
 
 }
@@ -86,7 +85,6 @@ function changegraph2()
     console.log(stateselect2);
     console.log(Yearselect2);
 
-    // Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
       Plotly.d3.json(jsontarget, function(err, rows){
         function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
@@ -101,17 +99,16 @@ function changegraph2()
         type: 'filter',
         target: unpack(rows, 'year'),
         operation: '=',
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         value: Yearselect2
         }, 
         {
         type: 'filter',
         target: unpack(rows, 'state'),
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         operation: '=',
         value: stateselect2
         },
-
         {
             type: 'aggregate',
             groups: unpack(rows, 'drug_name'),
@@ -141,7 +138,6 @@ function changegraph3()
     console.log(stateselect3);
     console.log(Yearselect3);
 
-    // Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
     Plotly.d3.json(jsontarget, function(err, rows){
         function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
@@ -157,13 +153,13 @@ function changegraph3()
         type: 'filter',
         target: unpack(rows, 'year'),
         operation: '=',
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         value: Yearselect3
         }, 
         {
         type: 'filter',
         target: unpack(rows, 'state'),
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         operation: '=',
         value: stateselect3
         },
@@ -211,7 +207,7 @@ function changegraph4()
         type: 'filter',
         target: unpack(rows, 'year'),
         operation: '=',
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         value: yearselect4
         }, 
         {
@@ -223,7 +219,7 @@ function changegraph4()
         {
         type: 'filter',
         target: unpack(rows, 'drug_name'),
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         operation: '=',
         value: drugselect
         },
@@ -258,7 +254,6 @@ function changegraph5()
     console.log(yearselect5);
     console.log(drugselect5);
 
-    // Plotly.d3.json("/api/v1.0/alldrugs", function(err, rows){
     Plotly.d3.json(jsontarget, function(err, rows){
         function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
@@ -274,7 +269,7 @@ function changegraph5()
         type: 'filter',
         target: unpack(rows, 'year'),
         operation: '=',
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         value: yearselect5
         }, 
         {
@@ -286,7 +281,7 @@ function changegraph5()
         {
         type: 'filter',
         target: unpack(rows, 'drug_name'),
-        // want to change the value below to something defined by a dropdown
+        // dropdown
         operation: '=',
         value: drugselect5
         },
