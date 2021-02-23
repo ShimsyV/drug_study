@@ -5,6 +5,8 @@
 ### Visualization link: 
 http://drug-study.herokuapp.com/
 
+![https://github.com/jebreensa/Project-2_Group12/blob/main/Images/heroku.PNG](https://github.com/jebreensa/Project-2_Group12/blob/main/Images/heroku.PNG)
+
 ### Language
 Python| HTML | JavaScrip | Jupyter NoteBook
 
